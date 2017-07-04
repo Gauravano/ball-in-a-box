@@ -1,6 +1,7 @@
 
 
 var ball = document.getElementById('ball');
+image = document.getElementById('image2');
 
 ball.style.top = '263px';
 ball.style.left = '630px';
@@ -8,6 +9,8 @@ ball.style.left = '630px';
 var number ;
 
 function boxClick(event){
+
+	image.style.display='none';
 	console.log("x"+ event.clientX);
 	console.log("y"+ event.clientY);
 
@@ -36,6 +39,7 @@ function boxClick(event){
 
 	if(currentTop <=103 || currentLeft <= 354 ||currentLeft >= 882 || currentTop >= 421){
 		clearInterval(number);
+		gameOver();
 	}
 
 
@@ -47,9 +51,19 @@ function boxClick(event){
 
 	ball.style.top = tempTop + 'px';
 	ball.style.left = tempLeft + 'px' ;
-	},7);
+	},5);
 
 };
+
+function gameOver(){
+	ball.style.top = '263px';
+	ball.style.left = '630px';
+	image.style.display='initial';
+}
+
+function scoring(){
+	
+}
 
 var box = document.getElementById('firebox');
 box.addEventListener('click',boxClick);
