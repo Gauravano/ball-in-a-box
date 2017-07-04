@@ -2,8 +2,8 @@
 
 var ball = document.getElementById('ball');
 
-ball.style.top = '0px';
-ball.style.left = '0px';
+ball.style.top = '263px';
+ball.style.left = '630px';
 
 var number ;
 
@@ -33,13 +33,8 @@ function boxClick(event){
 
 	console.log(currentTop);
 	console.log(newTop);
-	
-	mod = currentTop - newTop;
-	if (mod < 0){
-		mod = -1 * mod;
-	}
 
-	if(mod < 0.1){
+	if(currentTop <=103 || currentLeft <= 354 ||currentLeft >= 882 || currentTop >= 421){
 		clearInterval(number);
 	}
 
@@ -52,7 +47,7 @@ function boxClick(event){
 
 	ball.style.top = tempTop + 'px';
 	ball.style.left = tempLeft + 'px' ;
-	},5);
+	},7);
 
 };
 
